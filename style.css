@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Lexend+Deca:100,200,300,regular,500,600,700,800,900);
+
+body {
+    background-color: hsl(233, 47%, 7%);
+    font-size: 15px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "main-heading main-heading main-heading image image image"
+    "second-heading second-heading second-heading image image image"
+    "col1 col2 col3 image image image";
+    gap: none;
+    background-color: hsl(244, 38%, 16%);
+}
+
+.main-heading { 
+    grid-area: main-heading;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Inter', sans-serif;
+ }
+
+ .accent {
+    color: hsl(277, 64%, 61%);
+ }
+
+.second-heading { 
+    grid-area: second-heading;
+    font-family: 'Lexend-Deca', sans-serif;
+    font-weight: 700;
+ }
+
+.col1 { grid-area: col1; }
+
+.col2 { grid-area: col2; }
+
+.col3 { grid-area: col3; }
+
+.image { 
+    grid-area: image; 
+}
+
+img {
+    filter: hsl(277, 64%, 61%);
+}
+
+h2, h4 {
+    color: hsla(0, 0%, 100%, 0.75);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+h3 {
+    color: hsl(0, 0%, 100%);
+    font-family: 'Inter', sans-serif;
+}
