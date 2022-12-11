@@ -23,7 +23,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 220px;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
     "main-heading main-heading main-heading image image image"
@@ -68,11 +68,22 @@ body {
 .image { 
     grid-area: image; 
     background-color: hsl(277, 64%, 61%);
-    opacity: 0.4;
+    border-radius: 0px 10px 10px 0px;
 }
 
-image {
-    align-self: center;
+#desktop {
+    display: block;
+    border-radius: 0px 10px 10px 0px;
+    filter: brightness(70%);
+    image-rendering: pixelated;
+    opacity: 50%;
+}
+
+#mobile {
+    display: none;
+    filter: brightness(70%);
+    image-rendering: pixelated;
+    opacity: 50%;
 }
 
 h2, h4 {
@@ -88,10 +99,40 @@ h2 {
 h3 {
     color: hsl(0, 0%, 100%);
     font-family: 'Inter', sans-serif;
+    padding-bottom: 5%;
+}
+
+h4 {
+    font-size: small;
 }
 
 footer {
     position: absolute;
     align-self: flex-end;
     color: white;
+}
+
+@media screen and (max-width: 375px) {
+    #desktop {display: none;}
+    #mobile {display: block; max-width: 100%;}
+    .container { 
+    max-width: 375px;
+    grid-template-columns: 360px;  
+    grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr; 
+    grid-template-areas: 
+    "image"
+    "main-heading"
+    "second-heading"
+    "col1"
+    "col2"
+    "col3";
+    margin: 0;
+    padding: 0;
+    }
+    .col2, .col3 {
+        margin: 21%;
+    }
+    .image {
+        border-radius: 10px;
+    }
 }
